@@ -14,8 +14,13 @@ if errorlevel 1 (
 REM Check if required packages are installed
 python -c "import customtkinter" >nul 2>&1
 if errorlevel 1 (
-    echo Installing required packages...
+    echo Installing customtkinter...
     pip install customtkinter
+)
+python -c "import PIL" >nul 2>&1
+if errorlevel 1 (
+    echo Installing Pillow...
+    pip install pillow
 )
 
 REM Run the application

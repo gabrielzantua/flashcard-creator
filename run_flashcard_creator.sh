@@ -12,8 +12,12 @@ fi
 
 # Check if required packages are installed
 if ! python3 -c "import customtkinter" &> /dev/null; then
-    echo "Installing required packages..."
+    echo "Installing customtkinter..."
     pip3 install customtkinter
+fi
+if ! python3 -c "import PIL" &> /dev/null; then
+    echo "Installing Pillow..."
+    pip3 install pillow
 fi
 
 # Run the application
