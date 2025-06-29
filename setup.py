@@ -40,8 +40,8 @@ setup(
     include_package_data=True,
     keywords="flashcards, obsidian, spaced-repetition, anki, education, study-tools",
     project_urls={
-        "Bug Reports": "https://github.com/yourusername/flashcard-creator/issues",
-        "Source": "https://github.com/yourusername/flashcard-creator",
-        "Documentation": "https://github.com/yourusername/flashcard-creator#readme",
+        "Bug Reports": "https://github.com/gabrielzantua/flashcard-creator/issues",
+        "Source": "https://github.com/gabrielzantua/flashcard-creator",
+        "Documentation": "https://github.com/gabrielzantua/flashcard-creator#readme",
     },
 ) 
