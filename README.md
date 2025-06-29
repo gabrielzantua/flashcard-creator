@@ -10,16 +10,17 @@ This application streamlines the process of creating flashcards for use with Obs
 
 - **Intuitive GUI**: Clean, dark-themed interface built with CustomTkinter
 - **Flexible Card Order**: Choose between "Question First" or "Answer First" formats
-- **Real-time Preview**: See how your cards will look as you type
+- **Text & Image Support**: Add text, images, or both as questions and/or answers
+- **Image Preview**: See a thumbnail preview of selected images before adding the card
 - **Batch Creation**: Add multiple cards quickly without switching between files
-- **Obsidian Compatible**: Exports in the exact format required by the Space Repetition plugin
-- **Cross-platform**: Works on Windows, macOS, and Linux
+- **Obsidian Compatible**: Exports in the exact format required by the Space Repetition plugin, with images referenced in markdown and copied to an `images/` folder
+- **Modern, Non-Resizable UI**: Window is centered, non-resizable, and visually consistent
 
 ## 🚀 Installation
 
 ### Option 1: Download Pre-built Executable (Windows)
 
-1. Download the latest ZIP file
+1. Download the latest release from the [Releases](https://github.com/gabrielzantua/flashcard-creator/releases) page
 2. Extract the ZIP file
 3. Run `templater.exe`
 
@@ -32,13 +33,13 @@ This application streamlines the process of creating flashcards for use with Obs
 #### Steps
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/flashcard-creator.git
+   git clone https://github.com/gabrielzantua/flashcard-creator.git
    cd flashcard-creator
    ```
 
 2. Install dependencies:
    ```bash
-   pip install customtkinter pyinstaller
+   pip install customtkinter pyinstaller pillow
    ```
 
 3. Run the application:
@@ -59,18 +60,16 @@ The executable will be created in the `dist/` folder.
 ### Creating Flashcards
 
 1. **Launch the Application**: Run `templater.exe` or `python templater.py`
-
 2. **Set Card Order**: Choose whether questions or answers should appear first on the cards
-
 3. **Add Cards**:
-   - Enter the question/definition in the "Question/Definition" field
-   - Enter the answer in the "Answer" field
-   - Click "➕ Add Card" to add it to your collection
+   - Enter the question/definition in the "Question/Definition" field (text and/or image)
+   - Enter the answer in the "Answer" field (text and/or image)
+   - Use the 🖼️ button to add an image to either field (a file dialog will open)
+   - A thumbnail preview will appear next to the field when an image is selected
+   - Click **Add Card** to add it to your collection
    - Repeat for all your flashcards
-
-4. **Preview**: The preview box shows how your cards will look in the final format
-
-5. **Save**: Click "💾 Save and Exit" to export your cards as a markdown file
+4. **Preview**: The preview box shows how your cards will look in the final format (including markdown image links)
+5. **Save**: Click **Save and Exit** to export your cards as a markdown file. All images used will be copied to an `images/` folder next to your markdown file.
 
 ### Importing to Obsidian
 
@@ -82,26 +81,31 @@ The executable will be created in the `dist/` folder.
 
 The application creates cards in this format:
 ```
-Question
+Question text
+![](images/image1.png)
 ?
-Answer
+Answer text
+![](images/image2.png)
 ```
-
 Or with "Answer First" selected:
 ```
-Answer
+Answer text
+![](images/image2.png)
 ?
-Question
+Question text
+![](images/image1.png)
 ```
+You can mix text and images in either field.
 
 ## 🎨 Interface Overview
 
 - **Card Order Menu**: Select whether questions or answers appear first
-- **Question/Definition Field**: Enter the front of the card
-- **Answer Field**: Enter the back of the card
+- **Question/Definition Field**: Enter the front of the card (text and/or image)
+- **Answer Field**: Enter the back of the card (text and/or image)
+- **🖼️ Image Button**: Add an image to the respective field (with tooltip and preview)
 - **Add Card Button**: Add the current card to your collection
 - **Preview Box**: Real-time preview of all cards
-- **Save Button**: Export all cards as a markdown file
+- **Save Button**: Export all cards as a markdown file (with images)
 - **Close Button**: Exit the application
 
 ## 🔧 Technical Details
@@ -111,10 +115,7 @@ Question
 - **Dependencies**: 
   - `customtkinter` - Modern GUI framework
   - `tkinter` - Standard Python GUI library (included with Python)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+  - `pillow` - For image preview support
 
 ## 📝 License
 
@@ -129,7 +130,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 If you encounter any issues or have questions:
-1. Check the [Issues](https://github.com/yourusername/flashcard-creator/issues) page
+1. Check the [Issues](https://github.com/gabrielzantua/flashcard-creator/issues) page
 2. Create a new issue with detailed information about your problem
 3. Include your operating system and Python version if applicable
 
