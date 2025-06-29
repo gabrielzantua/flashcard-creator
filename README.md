@@ -19,7 +19,7 @@ This application streamlines the process of creating flashcards for use with Obs
 
 ### Option 1: Download Pre-built Executable (Windows)
 
-1. Download the latest release from the [Releases](https://github.com/yourusername/flashcard-creator/releases) page
+1. Download the latest ZIP file
 2. Extract the ZIP file
 3. Run `templater.exe`
 
